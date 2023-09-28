@@ -1,6 +1,6 @@
 ## [English Doc](english_doc.md)
 
-#An empathic bot
+# An Empathic Bot
 
 Forked from IntroventsEnglishCorner : A spoken English education chatbot based on ChatGPT/whsiper and qTTS.
 
