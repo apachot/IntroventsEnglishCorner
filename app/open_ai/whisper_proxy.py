@@ -7,7 +7,11 @@ def transcribe_to_text(audio_path):
     load_audio = audio.load_audio(audio_path)
     whisper_model = WhisperModel()
     whisper_model.load_model()
-    transcribe_result = whisper_model.transcribe(load_audio, None)
+    
+    #transcribe_result = whisper_model.transcribe(load_audio, None)
+    
+    transcribe_result = whisper_model.transcribe(load_audio, 'French')
+
     print(f'Transcribe result->{str(transcribe_result)}')
 
     chat_text = ""

@@ -19,7 +19,8 @@ class WhisperModel():
             audio,
             task="transcribe",
             language=lang,
-            verbose=True
+            verbose=True,
+            fp16=False
         )
 
         logging.info(f"Done transcription in {time.time() - tic:.1f} sec")

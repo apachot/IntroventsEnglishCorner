@@ -10,7 +10,7 @@ from pathlib import Path
 
 def convert_to_audio(user_id, chat_id, text_content, lang):
     # 定时任务清理
-    tts = gTTS(text_content, lang=lang)
+    tts = gTTS(text_content, lang='fr')
     audio_filename = os.path.join("app/files/output", user_id + "_" + chat_id + "_" + str(int(time.time())) + ".wav")
     tts.save(audio_filename)
 

@@ -40,7 +40,7 @@ def requestOpenai(chat_context, chat_history, model):
 
     if len(chat_history) == 0:
         chat_history.append({"role": "system",
-                             "content": gpt_prompt.english_teacher_prompt})
+                             "content": gpt_prompt.robot_bienveillant})
     chat_history.append({"role": "user",
                          "content": chat_context})
     print(f'openai chat request->{chat_history}')

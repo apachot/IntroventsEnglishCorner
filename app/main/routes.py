@@ -10,11 +10,12 @@ import io
 import time
 from app import create_app
 
-app = create_app()
 
+app = create_app()
 
 @bp.route('/')
 @bp.route('/index')
+
 def index():
     return render_template('index.html')
 
@@ -34,7 +35,7 @@ def text_chat():  # put application's code here
     ai_message, chat_history = chatgpt_proxy.text_chat(user_message, user_id, chat_id, gpt_version)
 
     # tts转成语音
-    audio_id = qtts_proxy.convert_to_audio(user_id, chat_id, ai_message, "en")
+    audio_id = qtts_proxy.convert_to_audio(user_id, chat_id, ai_message, 'fr')
 
     # 返回信息
     return jsonify({
@@ -93,14 +94,16 @@ def clear_history():
     print(data)
     return jsonify({'message': 'History cleared successfully'})
 
-# @bp.before_request
-# def log_request_info():
-#     app.logger.debug('Headers: %s', request.headers)
-#     app.logger.debug('Body: %s', request.get_data())
-#
-#
+@bp.before_request
+def log_request_info():
+     app.logger.debug('Headers: %s', request.headers)
+     app.logger.debug('Body: %s', request.get_data())
+
+
 # @bp.after_request
 # def log_response_info(response):
 #     app.logger.debug('Headers: %s', response.headers)
 #     app.logger.debug('Body: %s', response.get_data())
 #     return response
+
+
