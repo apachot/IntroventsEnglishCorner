@@ -21,8 +21,8 @@ python版本需要为3.10
 
 1. 下载程序
 ```
-git clone https://github.com/viking-man/IntroventsEnglishCorner.git
-cd IntroventsEnglishCorner
+git clone https://github.com/apachot/empathicbot
+cd empathicbot
 ```
 2. 初始化项目环境  
 ```
